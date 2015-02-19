@@ -1,4 +1,4 @@
-FROM capkopper/php-fpm
+FROM capkopper/php-fpm:develop
 
 # Install drush for root user ...
 ENV DRUSH_VERSION 6.4.0
