@@ -1,0 +1,10 @@
+{{ $project := env "PROJECT" }}
+{{ range $key, $pairs := tree ( $project | printf "clients/%s/php_config/") | byKey }}
+<?php
+{{ if $key | contains "drush_aliases" }}
+{{ range $pair := $pairs }}
+// alias_key: '{{.Key}}'
+{{.Value}}
+{{ end }}
+{{ end }}
+{{ end }}
